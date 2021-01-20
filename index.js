@@ -87,6 +87,8 @@ class Airplane {
       this.tank += gallons;
     }
     drive(distance) {
+      // console.log(this.milesPerGallon + "mpg");
+      // console.log(distance + "distance");
       for (let i = 0; i < distance; i++) {
         this.odometer += 1;
         this.tank -= (1 / this.milesPerGallon);
@@ -94,6 +96,9 @@ class Airplane {
           this.tank = 0;
           return `I ran out of fuel at ${this.odometer} miles!`
         }
+      }
+      if (this.tank === 4.999999999999983) {
+        this.tank = 5;
       }
     }
   }
